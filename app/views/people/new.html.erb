@@ -1,0 +1,5 @@
+<h1>Add Person to Address Book</h1>
+
+<% form_for @person do |f| %>
+<%= render :partial => "form", :locals => { :f => f, :submit_label => "Add Person" } %>
+<% end %>

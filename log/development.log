@@ -1,0 +1,752 @@
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2010-08-02 14:27:33) [GET]
+  [4;36;1mSQL (9.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 89ms (View: 10, DB: 9) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (292.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (220.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100802185220)
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "company" varchar(255), "email" varchar(255), "phone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100802185220')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-02 15:08:31) [GET]
+
+ActionController::RoutingError (No route matches "/users" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 15:08:53) [GET]
+  [4;36;1mPerson Load (3.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+
+ActionView::MissingTemplate (Missing template people/index.erb in view path app/views):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 15:10:37) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering people/index
+Completed in 61ms (View: 57, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:13:21) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 25ms (View: 20, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:18:53) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+
+ActionView::TemplateError (undefined local variable or method `people_path' for #<ActionView::Base:0x31e87d4>) on line #24 of app/views/layouts/application.html.erb:
+21: 	  <div id="navigation" class="center">
+22: 		<div class="width adjuster">
+23: 		  <ul>
+24: 			<li class="active"><%= link_to "People", people_path %></li>
+25: 		  </ul>
+26: 		</div>
+27: 	  </div>
+
+    app/views/layouts/application.html.erb:24
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:20:01) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:25:35) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 88ms (View: 83, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:25:40) [GET]
+
+ActionController::UnknownAction (No action responded to new. Actions: index):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-02 16:27:37) [GET]
+
+SyntaxError (/Users/mwsowner/Desktop/code/Address_Book/address_book/app/controllers/people_controller.rb:10: syntax error, unexpected $end, expecting kEND):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:28:12) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:28:14) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:34:44) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:38:30) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:38:54) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:38:56) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:40:07) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:47:40) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:48:54) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:49:59) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 16:56:15) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 16:56:45) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"N/A", "phone"=>"910-409-1280", "first_name"=>"Matthew", "last_name"=>"Scott", "email"=>"mdms.scott@google.com"}}
+  [4;36;1mPerson Create (0.6ms)[0m   [0;1mINSERT INTO "people" ("company", "updated_at", "phone", "first_name", "last_name", "email", "created_at") VALUES('N/A', '2010-08-02 20:56:45', '910-409-1280', 'Matthew', 'Scott', 'mdms.scott@google.com', '2010-08-02 20:56:45')[0m
+Redirected to http://localhost:3000/people
+Completed in 251ms (DB: 1) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:56:45) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 16:56:55) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:00:49) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:00:52) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 17:01:18) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"none", "phone"=>"aosdfosdf", "first_name"=>"Matthew", "last_name"=>"Scott", "email"=>"emailsdlfksdj"}}
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("company", "updated_at", "phone", "first_name", "last_name", "email", "created_at") VALUES('none', '2010-08-02 21:01:18', 'aosdfosdf', 'Matthew', 'Scott', 'emailsdlfksdj', '2010-08-02 21:01:18')[0m
+Redirected to http://localhost:3000/people
+Completed in 288ms (DB: 1) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:01:18) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:01:32) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:07:40) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 82ms (View: 77, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:08:03) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:08:07) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 17:08:16) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"asdliofja", "phone"=>"soijoia", "first_name"=>"masdlf", "last_name"=>"alsdkjf", "email"=>"lsdkfla"}}
+  [4;35;1mPerson Create (0.5ms)[0m   [0mINSERT INTO "people" ("company", "updated_at", "phone", "first_name", "last_name", "email", "created_at") VALUES('asdliofja', '2010-08-02 21:08:16', 'soijoia', 'masdlf', 'alsdkjf', 'lsdkfla', '2010-08-02 21:08:16')[0m
+Redirected to http://localhost:3000/people
+Completed in 265ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:08:16) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:08:23) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:08:27) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100802185220)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:37:38) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:37:41) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 17:38:01) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"fuckou", "phone"=>"089203", "first_name"=>"matt", "last_name"=>"scott", "email"=>"masdof"}}
+  [4;35;1mPerson Create (0.7ms)[0m   [0mINSERT INTO "people" ("company", "updated_at", "phone", "first_name", "last_name", "email", "created_at") VALUES('fuckou', '2010-08-02 21:38:01', '089203', 'matt', 'scott', 'masdof', '2010-08-02 21:38:01')[0m
+Redirected to http://localhost:3000/people
+Completed in 223ms (DB: 1) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:38:02) [GET]
+  [4;36;1mPerson Load (1.3ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20100802185220)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("people")[0m
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:44:47) [GET]
+  [4;36;1mPerson Load (0.9ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 26ms (View: 21, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:47:22) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 17:47:27) [GET]
+  Parameters: {"id"=>"2"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, index, and new):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-02 17:49:00) [GET]
+
+SyntaxError (/Users/mwsowner/Desktop/code/Address_Book/address_book/app/controllers/people_controller.rb:24: syntax error, unexpected $end, expecting kEND):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:49:17) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 17:49:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+
+ActionView::MissingTemplate (Missing template people/edit.erb in view path app/views):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 17:51:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Completed in 88ms (View: 82, DB: 0) | 200 OK [http://localhost/people/2/edit]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 17:55:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (2.6ms)
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/people/2/edit]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:55:40) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:55:42) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (2.4ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:57:27) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 74ms (View: 69, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 17:57:29) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (3.7ms)
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:57:31) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 17:57:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (1.5ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 17:57:35) [GET]
+  [4;36;1mPerson Load (0.9ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 18:02:05) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (3.7ms)
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 18:02:06) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"", "phone"=>"", "first_name"=>"", "last_name"=>"", "email"=>""}}
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (15.0ms)
+Completed in 28ms (View: 18, DB: 0) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:02:19) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:07:48) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:08:05) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-08-02 18:08:10) [DELETE]
+  Parameters: {"authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "id"=>"4"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 4) [0m
+  [4;35;1mPerson Destroy (0.6ms)[0m   [0mDELETE FROM "people" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/people
+Completed in 252ms (DB: 1) | 302 Found [http://localhost/people/4]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:08:11) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:08:15) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-08-02 18:08:21) [DELETE]
+  Parameters: {"authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "id"=>"3"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 3) [0m
+  [4;35;1mPerson Destroy (0.5ms)[0m   [0mDELETE FROM "people" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/people
+Completed in 339ms (DB: 1) | 302 Found [http://localhost/people/3]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:08:22) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#destroy (for 127.0.0.1 at 2010-08-02 18:08:26) [DELETE]
+  Parameters: {"authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "id"=>"2"}
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 2) [0m
+  [4;36;1mPerson Destroy (0.4ms)[0m   [0;1mDELETE FROM "people" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/people
+Completed in 281ms (DB: 1) | 302 Found [http://localhost/people/2]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:08:26) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2010-08-02 18:08:28) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Rendered people/_form (3.3ms)
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/people/new]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2010-08-02 18:09:25) [POST]
+  Parameters: {"commit"=>"Add Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "person"=>{"company"=>"Jack Russell", "phone"=>"704-614-0456", "first_name"=>"Nicholas", "last_name"=>"Bucciarelli", "email"=>"nick.bucciarelli@gmail.com"}}
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("company", "updated_at", "phone", "first_name", "last_name", "email", "created_at") VALUES('Jack Russell', '2010-08-02 22:09:25', '704-614-0456', 'Nicholas', 'Bucciarelli', 'nick.bucciarelli@gmail.com', '2010-08-02 22:09:25')[0m
+Redirected to http://localhost:3000/people
+Completed in 225ms (DB: 0) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:09:25) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:13:08) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:18:01) [GET]
+  [4;35;1mPerson Load (0.6ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:18:09) [GET]
+  [4;36;1mPerson Load (0.8ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:18:23) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:18:46) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 84ms (View: 77, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:21:16) [GET]
+  [4;35;1mPerson Load (0.7ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:21:18) [GET]
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 18:22:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/people/1/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-08-02 18:22:55) [PUT]
+  Parameters: {"commit"=>"Update Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "id"=>"1", "person"=>{"company"=>"N/A", "phone"=>"555-5555", "first_name"=>"Matthew", "last_name"=>"Scott", "email"=>"matt@email.com"}}
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;35;1mPerson Update (0.8ms)[0m   [0mUPDATE "people" SET "phone" = '555-5555', "email" = 'matt@email.com', "updated_at" = '2010-08-02 22:22:55' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/people
+Completed in 874ms (DB: 1) | 302 Found [http://localhost/people/1]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:22:56) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 81ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#edit (for 127.0.0.1 at 2010-08-02 18:23:00) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering people/edit
+Rendered people/_form (1.6ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/people/5/edit]
+
+
+Processing PeopleController#update (for 127.0.0.1 at 2010-08-02 18:23:29) [PUT]
+  Parameters: {"commit"=>"Update Person", "authenticity_token"=>"7gOIaBX8cu/kyd3CHdayukWD5H1nYy6R+ztTtZJBPd0=", "id"=>"5", "person"=>{"company"=>"Jack Russell", "phone"=>"555-6666", "first_name"=>"Nicholas", "last_name"=>"Bucciarelli", "email"=>"nick@email.com"}}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 5) [0m
+  [4;35;1mPerson Update (0.8ms)[0m   [0mUPDATE "people" SET "phone" = '555-6666', "email" = 'nick@email.com', "updated_at" = '2010-08-02 22:23:29' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/people
+Completed in 1113ms (DB: 1) | 302 Found [http://localhost/people/5]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:23:30) [GET]
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/people]
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-08-02 18:26:36) [GET]
+  [4;35;1mPerson Load (0.8ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/application
+Rendering people/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/]

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+	<title>My Rails App</title>
+	<%= stylesheet_link_tag 'application'%>
+	<%= javascript_include_tag :defaults%>
+  </head>
+  <body>
+	<div id="wrapper">
+      <div id="top" class="center">
+	    <div class="width_adjuster">
+		  <div class="left">
+			My Address Book
+		  </div>
+		  <div class="right">
+			Top Right
+		  </div>
+		  <div class="clear"></div>
+		</div>
+	  </div>
+	  <div id="navigation" class="center">
+		<div class="width adjuster">
+		  <ul>
+			<li class="active"><%= link_to "People", people_path %></li>
+		  </ul>
+		</div>
+	  </div>
+	  <div id="container" class="center">
+		<div class="width_adjuster">
+		  <% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash+#{name}" %>
+		  <% end %>
+		  <%= yield %>
+		</div>
+	  </div>
+	  <div id="bottom" class="center width_adjuster">
+		  <div class="left">
+			Bottom Left
+		  </div>
+		  <div class="right">
+			Bottom Right
+	      </div>
+	      <div class="clear"></div>
+	  </div>
+	</div>
+  </body>
+</html>

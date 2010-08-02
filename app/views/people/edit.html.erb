@@ -1,0 +1,5 @@
+<h1>Update <%= @person.first_name %>'s Info</h1>
+
+<% form_for @person do |f| %>
+  <%= render :partial => "form", :locals => { :f => f, :submit_label => "Update Person" } %>
+<% end %>
